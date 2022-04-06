@@ -6,7 +6,7 @@ import com.codewitharjun.springrestapi.repository.EmployeeRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:3000")
 /* Created by Arjun Gautam */
 @RestController
 public class EmployeeController {
@@ -36,7 +36,8 @@ public class EmployeeController {
         return employeeRepository.findById(id)
                 .map(employee -> {
                     employee.setName(newEmployee.getName());
-                    employee.setRole(newEmployee.getRole());
+                    employee.setUsername(newEmployee.getUsername());
+                    employee.setEmail(newEmployee.getEmail());
                     return employeeRepository.save(employee);
                 }).orElseGet(()->{
                     newEmployee.setId(id);

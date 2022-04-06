@@ -14,14 +14,10 @@ public class Employee {
     @GeneratedValue
     Long id;
     private String name;
-    private String role;
+    private String username;
+    private String email;
 
     public Employee() {
-    }
-
-    public Employee(String name, String role) {
-        this.name = name;
-        this.role = role;
     }
 
     public Long getId() {
@@ -40,21 +36,19 @@ public class Employee {
         this.name = name;
     }
 
-    public String getRole() {
-        return role;
+    public String getUsername() {
+        return username;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", role='" + role + '\'' +
-                '}';
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
